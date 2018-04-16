@@ -13,7 +13,7 @@ endif
 
 let g:did_indent = 1
 
-setlocal indentkeys+==~end,=~do,=~if,=~then,=~else
+setlocal indentkeys+==~end,=~do,=~if,=~then,=~else,=~elseif
 
 setlocal indentexpr=NCLIndent()
 
@@ -33,11 +33,11 @@ function NCLIndent()
    let curline = getline(v:lnum)
    let curstat =  substitute(curline, ';.*$', '', '')
 
-   if prevstat =~? '^\s*\(\(if.*then\)\|do\|else\)\>'
+   if prevstat =~? '^\s*\(\(if.*then\)\|\(elseif.*then\)\|\|do\|else\)\>'
       let ind = ind + &sw
    endif
 
-   if curstat =~? '^\s*\(else\|\(end\s*\(do\|if\)\)\)\>'
+   if curstat =~? '^\s*\(else\|elseif\|\(end\s*\(do\|if\)\)\)\>'
       let ind = ind - &sw
    endif
 
