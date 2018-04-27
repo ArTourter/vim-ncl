@@ -61,6 +61,7 @@ syn keyword nclBoolean   True False
 " pattern matching for comments
 syn match   nclComment	"^\ *;.*$"
 syn match   nclComment    ";.*"
+syn region  nclComment start="/;" end=";/"
 
 " pattern matching for strings
 syn region  nclString		start=+"+  end=+"+
