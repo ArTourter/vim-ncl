@@ -31,6 +31,8 @@ syn keyword nclKeyword begin break byte character continue create defaultapp do 
 
 syn match nclOperator "(/"
 syn match nclOperator "\/)"
+syn match nclOperator "\[/"
+syn match nclOperator "\/]"
 syn match nclOperator "\\"
 syn match nclOperator "{"
 syn match nclOperator "\}"
